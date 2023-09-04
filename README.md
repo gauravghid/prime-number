@@ -15,7 +15,7 @@ Service consists of following key parts:
 * ProblemDetails class used for invalid input parameter and Exception handling.
 * Caching results implemented
 * Actuators(health,env,info,metrics)
-* 
+  
 ### How to run-
 This application is packaged as a war which has Tomcat 8 embedded. No Tomcat or JBoss installation is necessary. You run it using the java -jar command.
 * Clone this repository - git@github.com:gauravghid/prime-number.git
