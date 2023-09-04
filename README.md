@@ -1,20 +1,6 @@
-Prime Number microservice
+Prime Number api
 -------------------------
 -------------------------
-### How to run-
-This application is packaged as a war which has Tomcat 8 embedded. No Tomcat or JBoss installation is necessary. You run it using the java -jar command.
-* Clone this repository - <<>>
-* Make sure you are using JDK 1.8 and Maven 3.x
-* You can build the project and run the tests by running mvn clean package
-* Once successfully built, you can run the service by one of these two methods:
-
-    java -jar target/prime-number-0.0.1-SNAPSHOT.jar
-
-* Note: Server port set to 9092.
-
-Once the application runs you should see something like this
-2023-09-03T23:47:52.686+01:00  INFO 98531 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9092 (http) with context path ''
-2023-09-03T23:47:52.697+01:00  INFO 98531 --- [  restartedMain] c.e.prime.number.PrimeNumberApplication  : Started PrimeNumberApplication in 1.852 seconds (process running for 2.067)
 
 ### Overview
 Service is used to calculate and return all the prime numbers up to and including a number provided.
@@ -29,6 +15,23 @@ Service consists of following key parts:
 * ProblemDetails class used for invalid input parameter and Exception handling.
 * Caching results implemented
 * Actuators(health,env,info,metrics)
+* 
+### How to run-
+This application is packaged as a war which has Tomcat 8 embedded. No Tomcat or JBoss installation is necessary. You run it using the java -jar command.
+* Clone this repository - 
+* Make sure you are using JDK 1.8 and Maven 3.x
+* You can build the project and run the tests by running mvn clean package
+* Once successfully built, you can run the service by one of these two methods:
+
+    java -jar target/prime-number-0.0.1-SNAPSHOT.jar
+
+* Note: Server port set to 9092.
+
+Once the application runs you should see something like this
+2023-09-03T23:47:52.686+01:00  INFO 98531 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9092 (http) with context path ''
+2023-09-03T23:47:52.697+01:00  INFO 98531 --- [  restartedMain] c.e.prime.number.PrimeNumberApplication  : Started PrimeNumberApplication in 1.852 seconds (process running for 2.067)
+
+
 
 
 ### Functional design
