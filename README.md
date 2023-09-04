@@ -55,28 +55,29 @@ Default credentials:
 
 ### API
 Prime number service exposes only one REST API endpoint.
-This API takes a number and an optional algorithm key and return list of prime numbers up to and including the number provided. .
-* Algorithm Key :
-Sieve Algorithm : SA
-Brute Force Algorithm : BFA
-* If no algorithm key is provided, api generates prime number using Sieve Algorithm.
+This API takes a number and an optional algorithm key and return list of prime numbers up to and including the number provided.
+#### Algorithm Key
+* Sieve Algorithm : SA
+* Brute Force Algorithm : BFA
 
-| URI | Method | Headers | URL Param | Response
-/api/v1.0/primes/{number}?algorithm={algorithmKey}| GET | Content-type= application/json,accept = application/json or application/xml | initials and list of prime numbers, 200 ok
-Eg :
-curl --location --request GET 'http://localhost:9092/api/v1.0/primes/7?algorithm=BFA' --header 'Accept: application/xml' --header 'Authorization: Basic dXNlcjpwYXNzd29yZA=='
-Response :
-<ResponseModel>
-    <Initial>14</Initial>
-    <Primes>
-        <Primes>2</Primes>
-        <Primes>3</Primes>
-        <Primes>5</Primes>
-        <Primes>7</Primes>
-        <Primes>11</Primes>
-        <Primes>13</Primes>
-    </Primes>
-</ResponseModel>
+   If no algorithm key is provided, api generates prime numbers using Sieve Algorithm.
+#### URI Details
+* | URI | Method | Headers | URL Param | Response
+* /api/v1.0/primes/{number}?algorithm={algorithmKey}| GET | Content-type= application/json,accept = application/json or application/xml | initials and list of prime numbers, 200 ok
+* Eg :
+    curl --location --request GET 'http://localhost:9092/api/v1.0/primes/7?algorithm=BFA' --header 'Accept: application/xml' --header 'Authorization: Basic dXNlcjpwYXNzd29yZA=='
+* Response :
+{
+    "Initial": 14,
+    "Primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+    ]
+}
 
 Here are some endpoints you can call:
 
