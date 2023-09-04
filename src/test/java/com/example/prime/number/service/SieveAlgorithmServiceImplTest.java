@@ -29,7 +29,7 @@ public class SieveAlgorithmServiceImplTest {
     }
 
     @Test
-    public  void testGetAlgorithmName() {
+    public  void shouldReturnAlgorithmName() {
        String name = sieveAlgorithmService.getAlgorithmName();
        assertEquals("SieveAlgorithm",name);
     }

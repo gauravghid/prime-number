@@ -42,7 +42,7 @@ public class PrimeNumberApiIntegrationTest {
      * Testing prime number generation for Input 15.
      */
     @Test
-    public void testPrimesGenerationForAInput() throws UnsupportedEncodingException {
+    public void shouldReturnPrimeNumberTill15() throws UnsupportedEncodingException {
         String url = baseUrl + "15";
         List<Integer> expectedPrimeNumberList = Arrays.asList(2,3,5,7,11,13);
         HttpEntity<Void> requestEntity = new HttpEntity<>(createBasicAuthHeaders());
@@ -57,7 +57,7 @@ public class PrimeNumberApiIntegrationTest {
      * Testing prime number generation for Input 23 to test the inclusion of upperbound prime number i.e 23.
      */
     @Test
-    public void testPrimesGenerationForUpperBoundInclusive () throws UnsupportedEncodingException {
+    public void shouldReturnPrimeNumbersIncludingTheNumberProvided () throws UnsupportedEncodingException {
         String url = baseUrl + "23";
         List<Integer> expectedPrimeNumberList = Arrays.asList(2,3,5,7,11,13,17,19,23);
         HttpEntity<Void> requestEntity = new HttpEntity<>(createBasicAuthHeaders());
@@ -71,7 +71,7 @@ public class PrimeNumberApiIntegrationTest {
      * Testing prime number generation for input 17 using Sieve Algorithm
      */
     @Test
-    public void testPrimesGenerationUsingSieveAlgorithm () throws UnsupportedEncodingException {
+    public void shouldReturnPrimeNumbersUsingSieveAlgorithm () throws UnsupportedEncodingException {
         String url = baseUrl + "17?algorithm=SA";
         List<Integer> expectedPrimeNumberList = Arrays.asList(2,3,5,7,11,13,17);
         HttpEntity<Void> requestEntity = new HttpEntity<>(createBasicAuthHeaders());
@@ -85,7 +85,7 @@ public class PrimeNumberApiIntegrationTest {
      * Testing prime number generation for input 35 using Brute Force Algorithm
      */
     @Test
-    public void testPrimesGenerationUsingBruteForceAlgorithm () throws UnsupportedEncodingException {
+    public void shouldReturnPrimeNumbersUsingBruteForceAlgorithm () throws UnsupportedEncodingException {
         String url = baseUrl + "35?algorithm=BFA";
         List<Integer> expectedPrimeNumberList = Arrays.asList(2,3,5,7,11,13,17,19,23,29,31);
         HttpEntity<Void> requestEntity = new HttpEntity<>(createBasicAuthHeaders());
@@ -99,7 +99,7 @@ public class PrimeNumberApiIntegrationTest {
      * Testing prime number generation for input 1 using Brute Force Algorithm
      */
     @Test
-    public void testPrimesGenerationForOne () throws UnsupportedEncodingException {
+    public void shouldNotReturnAnyPrimeNumbersForInput1 () throws UnsupportedEncodingException {
         String url = baseUrl + "1?algorithm=BFA";
         List<Integer> emptyList = new ArrayList<>() ;
         HttpEntity<Void> requestEntity = new HttpEntity<>(createBasicAuthHeaders());
@@ -113,7 +113,7 @@ public class PrimeNumberApiIntegrationTest {
      * Testing prime number generation for negative integer
      */
     @Test
-    public void testPrimesGenerationForNegativeInteger () throws UnsupportedEncodingException {
+    public void shouldNotReturnPrimeNumbersForNegativeInput () throws UnsupportedEncodingException {
         String url = baseUrl + "-15?algorithm=BFA";
         List<Integer> emptyList = new ArrayList<>() ;
         HttpEntity<Void> requestEntity = new HttpEntity<>(createBasicAuthHeaders());

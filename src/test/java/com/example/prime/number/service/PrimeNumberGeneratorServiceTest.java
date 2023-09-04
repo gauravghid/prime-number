@@ -21,6 +21,9 @@ public class PrimeNumberGeneratorServiceTest {
     public void init() {
     }
 
+    /**
+     *
+     */
     @Test
     public void testGetPrimes() {
         Map<String, PrimeNumberService> serviceMap = new HashMap<>();

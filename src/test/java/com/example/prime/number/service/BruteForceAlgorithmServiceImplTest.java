@@ -30,7 +30,7 @@ public class BruteForceAlgorithmServiceImplTest {
     }
 
     @Test
-    public  void testGetAlgorithmName() {
+    public  void shouldReturnAlgorithmName() {
         String name = bruteForceAlgorithmService.getAlgorithmName();
         assertEquals("BruteForceAlgorithm",name);
     }

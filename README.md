@@ -31,8 +31,9 @@ Once the application runs you should see something like this
 2023-09-03T23:47:52.686+01:00  INFO 98531 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9092 (http) with context path ''
 2023-09-03T23:47:52.697+01:00  INFO 98531 --- [  restartedMain] c.e.prime.number.PrimeNumberApplication  : Started PrimeNumberApplication in 1.852 seconds (process running for 2.067)
 
-
-
+### Technology Stack
+* JDK 17
+* SpringBoot framework 3.1
 
 ### Functional design
 Code segregated by 6 main packages which represent main functional parts:
@@ -54,10 +55,14 @@ Default credentials:
 
 ### API
 Prime number service exposes only one REST API endpoint.
-This API consumes prime number range and algorithm over GET call.
+This API takes a number and an optional algorithm key and return list of prime numbers up to and including the number provided. .
+* Algorithm Key :
+Sieve Algorithm : SA
+Brute Force Algorithm : BFA
+* If no algorithm key is provided, api generates prime number using Sieve Algorithm.
 
 | URI | Method | Headers | URL Param | Response
-/api/v1.0/primes/{number}?algorithm=BFA| GET | Content-type= application/json,accept = application/json or application/xml | initials and list of prime numbers, 200 ok
+/api/v1.0/primes/{number}?algorithm={algorithmKey}| GET | Content-type= application/json,accept = application/json or application/xml | initials and list of prime numbers, 200 ok
 Eg :
 curl --location --request GET 'http://localhost:9092/api/v1.0/primes/7?algorithm=BFA' --header 'Accept: application/xml' --header 'Authorization: Basic dXNlcjpwYXNzd29yZA=='
 Response :
