@@ -65,7 +65,7 @@ This API takes a number and an optional algorithm key and return list of prime n
 * | URI | Method | Headers | URL Param | Response
 * /api/v1.0/primes/{number}?algorithm={algorithmKey}| GET | Content-type= application/json,accept = application/json or application/xml | initials and list of prime numbers, 200 ok
 * Eg :
-    curl --location --request GET 'http://localhost:9092/api/v1.0/primes/14?algorithm=BFA' --header 'Accept: application/xml' --header 'Authorization: Basic dXNlcjpwYXNzd29yZA=='
+    curl --location --request GET 'http://localhost:9092/api/v1.0/primes/14?algorithm=BFA' --header 'Accept: application/json' --header 'Authorization: Basic dXNlcjpwYXNzd29yZA=='
 * Response :
 {
     "Initial": 14,
