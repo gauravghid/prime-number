@@ -1,4 +1,4 @@
-Prime Number api
+Prime Number API
 -------------------------
 -------------------------
 
@@ -9,7 +9,7 @@ It uses BruteForce and Sieve algorithm(default value is Sieve Algorithm, if none
 Service consists of following key parts:
 * Supports multiple algorithm to generate list of  prime numbers.
 * Basic authorization enabled
-* Returns response(xml/JSON) based on the media type header provided (by default it returns response in JSON)
+* Returns response(xml/JSON) based on the media type header provided (by default it returns response in xml)
 * Swagger integration
 * Aspect Oriented programming for Logging
 * ProblemDetails class used for invalid input parameter and Exception handling.
@@ -59,7 +59,19 @@ This API consumes prime number range and algorithm over GET call.
 | URI | Method | Headers | URL Param | Response
 /api/v1.0/primes/{number}?algorithm=BFA| GET | Content-type= application/json,accept = application/json or application/xml | initials and list of prime numbers, 200 ok
 Eg :
-curl --location --request GET 'http://localhost:9092/api/v1.0/primes/56?algorithm=BFA' --header 'Accept: application/json' --header 'Authorization: Basic dXNlcjpwYXNzd29yZA=='
+curl --location --request GET 'http://localhost:9092/api/v1.0/primes/7?algorithm=BFA' --header 'Accept: application/xml' --header 'Authorization: Basic dXNlcjpwYXNzd29yZA=='
+Response :
+<ResponseModel>
+    <Initial>14</Initial>
+    <Primes>
+        <Primes>2</Primes>
+        <Primes>3</Primes>
+        <Primes>5</Primes>
+        <Primes>7</Primes>
+        <Primes>11</Primes>
+        <Primes>13</Primes>
+    </Primes>
+</ResponseModel>
 
 Here are some endpoints you can call:
 
