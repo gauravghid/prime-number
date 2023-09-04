@@ -18,14 +18,14 @@ Service consists of following key parts:
 * 
 ### How to run-
 This application is packaged as a war which has Tomcat 8 embedded. No Tomcat or JBoss installation is necessary. You run it using the java -jar command.
-* Clone this repository - 
+* Clone this repository - git@github.com:gauravghid/prime-number.git
 * Make sure you are using JDK 1.8 and Maven 3.x
 * You can build the project and run the tests by running mvn clean package
 * Once successfully built, you can run the service by one of these two methods:
 
     java -jar target/prime-number-0.0.1-SNAPSHOT.jar
 
-* Note: Server port set to 9092.
+* Note: Default Server port  set in application.properties : 9092.
 
 Once the application runs you should see something like this
 2023-09-03T23:47:52.686+01:00  INFO 98531 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9092 (http) with context path ''
